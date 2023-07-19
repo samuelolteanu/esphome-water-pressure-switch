@@ -351,9 +351,9 @@ logger:
   #level: info
 api:
   encryption:
-    key: "YqW4TqjkfluQWngRyvA/hu5tYdBH/5CwJqXB1gQ5mK0="
+    key: ""
 ota:
-  password: "f9bdb75940e8bd5b7155c48aae726d87"
+  password: ""
 wifi:
   ap:
     ssid: "Esp32-2 Fallback Hotspot"
