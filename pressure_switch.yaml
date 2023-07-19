@@ -357,7 +357,7 @@ ota:
 wifi:
   ap:
     ssid: "Esp32-2 Fallback Hotspot"
-    password: "9uxUqO7sHKsL"
+    password: ""
   networks:
     - ssid: !secret wifi_ssid
       password: !secret wifi_password
