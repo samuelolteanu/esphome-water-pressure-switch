@@ -339,9 +339,6 @@ button:
   - platform: safe_mode
     name: "Restart (Safe Mode) esp32-2"
 
-
-
-
 debug:
   update_interval: 1s
 text_sensor:
