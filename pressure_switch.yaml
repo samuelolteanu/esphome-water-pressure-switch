@@ -152,6 +152,19 @@ switch:
                      message: "Nu porneste, protectie dry run activata!"
           - delay: 0.1s         
           - switch.turn_off: releu_pompa
+          - switch.turn_off: releu_pompa_real
+
+      - if:
+          condition:
+            - lambda: 'return id(pressure).state > ${min_pressure};'
+          then:
+            - homeassistant.service:
+                  service: notify.persistent_notification
+                  data:
+                     message: "Nu porneste, are presiune!"
+            - delay: 0.1s         
+            - switch.turn_off: releu_pompa
+            - switch.turn_off: releu_pompa_real
              
 
       - if:
@@ -164,11 +177,11 @@ switch:
                      message: "Nu porneste, dezactivat din Home Assistant!" 
             - delay: 0.1s         
             - switch.turn_off: releu_pompa
+            - switch.turn_off: releu_pompa_real
      
     on_turn_off:
       then:
        - switch.turn_off: releu_pompa_real
-
   #- platform: dallas
    # address: 0x55011453a93baa28
     #name: "Temperatura Pompa Apa Rece"
